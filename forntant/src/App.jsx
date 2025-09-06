@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { useUser } from "@clerk/clerk-react"
 import { Navigate, Outlet } from "react-router-dom"
 import Header from "./components/componete/Header.jsx";
+import { Toaster } from "sonner";
 
 function App() {
   const { user, isLoaded, isSignedIn } = useUser();
@@ -14,6 +15,7 @@ function App() {
     <div>
       <Header />
       <Outlet />
+      <Toaster />
     </div>
   );
 }

@@ -10,13 +10,23 @@ const axiosClient = axios.create({
   }
 });
 
-// FIXED: Accept raw object and wrap it once here
+// Create resume
 const CreateNewResume = (data) => 
   axiosClient.post('/user-resumes', { data });
+
+// Get resumes by email
 const getresumes = (userEmail) =>
   axiosClient.get('/user-resumes?filters[userEmail][$eq]=' + userEmail);
 
+// ✅ Fixed update function
+// ✅ Fixed Update API
+const UpdateResumeDetail=(id,data)=>axiosClient.put('/user-resumes/'+id,data)
+
+
+
 
 export default {
-  CreateNewResume,getresumes
+  CreateNewResume,
+  getresumes,
+  UpdateResumeDetail,   
 };

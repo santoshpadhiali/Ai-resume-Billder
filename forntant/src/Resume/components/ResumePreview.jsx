@@ -7,7 +7,8 @@ import EducationalPreview from './preview/EducationalPreview';
 import Skill from './preview/Skill';
 
 function ResumePreview() {
-  const {resumeInfo ,setResumeinfo} = useContext(ResumeInfoContext);// we can use the resume info context 
+  const { resumeInfo,setResumeInfo } = useContext(ResumeInfoContext);
+// we can use the resume info context 
   return (
     <div className='shadow-lg h-full p-14 border-t-[20px]'
     style={{
@@ -15,7 +16,8 @@ function ResumePreview() {
     }}
     >
         {/* personal detels */}
-        <PersonalDetelsPreview resumeInfo={resumeInfo}/>
+        <PersonalDetelsPreview resumeInfo={resumeInfo} setResumeInfo={setResumeInfo} />
+
 
         {/*Summery  */}
       <SummeryPreview resumeInfo={resumeInfo}/>
